@@ -24,13 +24,14 @@ CAPTION = "GREED"
 CELL_SIZE = 20
 FONT_SIZE = 20
 
-COLS = 40
+COLS = MAX_Y
 ROWS = 30
 GAME = true
 WHITE = Color(255, 255, 255)
 BLUE = Color(45, 45, 255)
 RED = Color(245, 45, 45)
-
+DEFAULT_ROCKS = 10
+DEFAULT_GEMS = 10
 
 def main():
     board = Board()
@@ -46,21 +47,27 @@ def main():
     player.set_font_size(FONT_SIZE)
     player.set_color(WHITE)
 
+    for n in range(DEFAULT_ROCKS):
+        x = random.randint(1, COLS - 1)
+        bar_position = Point(x, 25)
+        rock = Rock()
+        rock.set_position(bar_position)
+        rock.set_text("o")
+        rock.set_font_size(FONT_SIZE)
+        rock.set_color(RED)
+        board.add_actor("rocks", rock)
 
-    rock = Rock()
-    rock.set_position(Point(210, 360))
-    rock.set_text("o")
-    rock.set_font_size(FONT_SIZE)
-    rock.set_color(RED)
-    gem = Gem()
-    gem.set_position(Point(240, 300))
-    gem.set_text("*")
-    gem.set_font_size(FONT_SIZE)
-    gem.set_color(BLUE)
+    for n in range(DEFAULT_GEMS):
+        x = random.randint(1, COLS - 1)
+        bar_position = Point(x, 25)
+        gem = Gem()
+        gem.set_position(bar_position)
+        gem.set_text("*")
+        gem.set_font_size(FONT_SIZE)
+        gem.set_color(BLUE)
+        board.add_actor("gems", gem)
 
     board.add_actor("player", player)
-    board.add_actor("rocks", rock)
-    board.add_actor("gems", gem)
     print("main")
     # Start the game
     keyboard = Keyboard()
