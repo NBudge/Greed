@@ -4,7 +4,7 @@ from shared.point import Point
 class Object:
 
 
-    def _init_(self):
+    def __init__(self):
         self._text = ""
         self._font_size = 20
         self._color = Color(255, 255, 255)
