@@ -24,7 +24,7 @@ class Director:
         self._video_service = video
 
     def _add_gems(self, board):
-        for i in range(100):
+        for _ in range(100):
             gem = Gem()
             gem.set_position(Point(randint(0, 800), randint(0, 600)))
             gem.set_font_size(FONT_SIZE)
