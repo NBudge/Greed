@@ -13,6 +13,7 @@ from classes.player import Player
 from classes.board import Board
 from classes.gem import Gem
 from classes.rock import Rock
+from classes.score import Score
 
 
 
@@ -37,15 +38,25 @@ def main():
     board = Board()
 
     
-    x = int(MAX_X / 2)
-    y = int(MAX_Y - 50)
-    position = Point(x, y)
+    player_x = int(MAX_X / 2)
+    player_y = int(MAX_Y - 50)
+    player_position = Point(player_x, player_y)
+
+    score_x = int(MAX_X / 125)
+    score_y = int(MAX_Y / 100)
+    score_position = Point(score_x, score_y)
 
     player  = Player()
-    player.set_position(position)
+    player.set_position(player_position)
     player.set_text("#")
     player.set_font_size(FONT_SIZE)
     player.set_color(WHITE)
+
+    score = Score()
+    score.set_position(score_position)
+    score.set_text("Score: ")
+    score.set_font_size(FONT_SIZE)
+    score.set_color(WHITE)
 
     for n in range(DEFAULT_ROCKS):
         x = random.randint(1, COLS - 1)
@@ -68,6 +79,7 @@ def main():
         board.add_actor("gems", gem)
 
     board.add_actor("player", player)
+    board.add_actor("score", score)
     print("main")
     # Start the game
     keyboard = Keyboard()

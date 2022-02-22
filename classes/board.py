@@ -1,10 +1,12 @@
 class Board:
 
-
     def __init__(self):
-       
         self._actors = {}
-        
+        self._score = ""
+
+    def add_score(self, score):
+        self._score = score
+
     def add_actor(self, group, actor):
         if not group in self._actors.keys():
             self._actors[group] = []
