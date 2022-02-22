@@ -1,5 +1,6 @@
 from classes.object import Object
 
 class Gem(Object):
-    def _init_(self):
-        self.text = "*"
+    def __init__(self):
+        super().__init__()
+        self._text = "*"
