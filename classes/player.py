@@ -14,7 +14,6 @@ class Player:
         self._position = Point(10, 10)
         self._velocity = Point(0, 0)
 
-
     def get_position(self):
         return self._position
     def get_text(self):

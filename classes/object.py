@@ -1,8 +1,6 @@
 from shared.color import Color
 from shared.point import Point
-
 class Object:
-
 
     def _init_(self):
         self._text = ""
@@ -10,7 +8,6 @@ class Object:
         self._color = Color(255, 255, 255)
         self._position = Point(10, 10)
         self._velocity = Point(0, 0)
-
 
     def get_position(self):
         return self._position
@@ -35,6 +32,6 @@ class Object:
         self._velocity = velocity
 
     def move_next(self, max_x, max_y):
-        x = (self._position.get_x() + self._velocity.get_x()) % max_x
-        y = (self._position.get_y() + self._velocity.get_y()) % max_y
-        self._position = Point(x, y)
+        # x = (self._position.get_x() + self._velocity.get_x()) % max_x
+        # y = (self._position.get_y() + self._velocity.get_y()) % max_y
+        self._position = Point(max_x, max_y)
