@@ -5,7 +5,7 @@ from classes.object import Object
 
 class Score(Object):
 
-    def _init_(self):
+    def __init__(self):
         super().__init__()
         self._value = 0
 

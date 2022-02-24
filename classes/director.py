@@ -29,23 +29,6 @@ class Director:
         x = int(MAX_X / 2)
         y = int(MAX_Y - 50)
         position = Point(x, y)
-
-        # player  = Player()
-        # player.set_position(position)
-        # player.set_text("#")
-        # player.set_font_size(FONT_SIZE)
-        # player.set_color(WHITE)
-
-
-        # rock = Rock()
-        # rock.set_position(Point(210, 360))
-        # rock.set_text("o")
-        # rock.set_font_size(FONT_SIZE)
-        # rock.set_color(RED)
-        # self._add_gems(board)
-
-        # board.add_actor("player", player)
-        # board.add_actor("rocks", rock)
         
             
     def start_game(self, board):
@@ -61,11 +44,9 @@ class Director:
                     # print (f'Start:{last_time}')
                     for _ in range(randint(1,2)):
                         gem = Gem()
-                        gem.set_new()
                         board.add_actor("gems", gem)
                     for _ in range(randint(1,2)):    
                         rock = Rock()
-                        rock.set_new()
                         board.add_actor("rocks", rock)
 
                     last_time = time.perf_counter()
