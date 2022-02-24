@@ -41,4 +41,4 @@ GREED  (project root folder)
 * Mallory Lee : Fixed the code(constructors and subclasses) and cleaned up the code. Created constants and director class, requirements.txt
 * Cristian Fernandez : I got the rocks and gems falling from the top and the score keeper.
 * Zachary Thompson : I entered random generation for gem/rock spawn, and made sure they appeared in a line at the top of the game board.
-* Nathanael Budge : Got the basics of the file set up. Got the GUI working initially. Got the player moving.
+* Nathanael Budge : Got the basics of the file set up. Got the GUI working initially. Got the player moving. Good tries on score.py
