@@ -1,5 +1,6 @@
 # Greed
-Simon Carless once described robotfindskitten as "less a game and more a way of life ... It's fun to wander around until you find a kitten, at which point you feel happy and can start again". I don't think I could have said it better myself!
+Falling Gems and Rocks!
+Let's gathering gems from the sky! Each time you gather gems, you will earn score! But if you have rocks, you will lose the point.
 
 ## Getting Started
 ---
@@ -38,7 +39,7 @@ GREED  (project root folder)
 * Packages in the requirements.txt
 
 ## Authors
-* Mallory Lee : Fixed the code(constructors and subclasses) and cleaned up the code. Created constants and director class, requirements.txt
+* Mallory Lee : Fixed the code(constructors and subclasses) and cleaned up the code. Created constants and director class, requirements.txt, and README.md
 * Cristian Fernandez : I got the rocks and gems falling from the top and the score keeper. After them, added them into director class.
 * Zachary Thompson : I entered random generation for gem/rock spawn, and made sure they appeared in a line at the top of the game board.
 * Nathanael Budge : Got the basics of the file set up. Got the GUI working initially. Got the player moving. Good tries on score.py
