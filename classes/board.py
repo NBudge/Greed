@@ -2,15 +2,36 @@ from ctypes.wintypes import RGB
 from shared.color import Color
 
 class Board:
+    """The board on which the game is player
+    
+    The responsibility of the board is to provide a grid layout on which the objects (players gems and rocks) can move on
+
+    """
 
     def __init__(self):
+        """Constructs the Board
+
+        Args:
+            None
+        """
         self._actors = {}
         self._score = ""
 
     def add_score(self, score):
+        """Constructs the director
+        
+        Args:
+            score: the amount of score to add
+        """
         self._score = score
 
     def add_actor(self, group, actor):
+        """adds in the actors into a list
+        
+        Args:
+            group: location of actor
+            actor: what actor is being added
+        """
         if not group in self._actors.keys():
             self._actors[group] = []
             
@@ -18,23 +39,43 @@ class Board:
             self._actors[group].append(actor)
 
     def get_actors(self, group):
+        """returns actors
+        
+        Args:
+            group: location of actor
+        """
         results = []
         if group in self._actors.keys():
             results = self._actors[group].copy()
         return results
     
     def get_all_actors(self):
+        """returns all actors
+        
+        Args:
+            none
+        """
         results = []
         for group in self._actors:
             results.extend(self._actors[group])
         return results
 
     def get_first_actor(self, group):
+        """returns the first actor
+        
+        Args:
+            group: location of actor
+        """
         result = None
         if group in self._actors.keys():
             result = self._actors[group][0]
         return result
     def move_all_elements_actors(self):
+        """moves rocks and gems and does the collision detection
+        
+        Args:
+            none
+        """
         player_x = 0
         player_y = 0
         banner = self.get_first_actor("banner")
@@ -62,5 +103,11 @@ class Board:
                     
 
     def remove_actor(self, group, actor):
+        """removes actor from the list
+        
+        Args:
+            group: location of actor
+            actor: actor to be removed
+        """
         if group in self._actors:
             self._actors[group].remove(actor)
