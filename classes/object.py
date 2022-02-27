@@ -18,11 +18,7 @@ class Object:
         """ Constructor of Object class
         
         Args:
-        self._text (string): None for default.
-        self._font_size (int): 20
-        self._color (class): White
-        self._position (class): x = 10, y = 10
-        self._velocity (class): x = 0, y = 0
+        None
         """
         self._text = ""
         self._font_size = 20
@@ -31,33 +27,84 @@ class Object:
         self._velocity = Point(0, 0)
 
     def get_position(self):
-        """Gets the position where object should be displayed in the screen.
+        """Return the position where object should be displayed in the screen.
 
-        Returns:
-            selef._position : value of x and y
+        Args:
+            None
         """
         return self._position
     def get_text(self):
+        """returns the text (object's shape).
+        
+        Args:
+            None
+        """
         return self._text
     def get_velocity(self):
+        """returns the velocity of the object.
+        
+        Args:
+            None
+        """
         return self._velocity
     def set_position(self, position):
+        """set velocity.
+        
+        Args:
+            position(int,int): values of x and y
+        """
         self._position = position
     def get_font_size(self):
+        """returns the text size.
+        
+        Args:
+            None
+        """
         return self._font_size
     def get_color(self):
+        """returns the object's color.
+        
+        Args:
+            None
+        """
         return self._color
 
     def set_text(self, text):
+        """Set the text (object's shape).
+        
+        Args:
+            text(int): shape of the object
+        """
         self._text = text
     def set_color(self, color):
+        """Set the object's color.
+        
+        Args:
+            color(int): colors of the text
+        """
         self._color = color
     def set_font_size(self, font_size):
+        """set the text size.
+        
+        Args:
+            font_size(int): size of the text
+        """
         self._font_size = font_size
     def set_velocity(self, velocity):
+        """set the velocity.
+        
+        Args:
+            velocity(int): valeus of x and y
+        """
         self._velocity = velocity
 
     def move_next(self, max_x, max_y):
+        """change the position based on x and y
+        
+        Args:
+            max_x(int) : maximum number of x
+            max_y(int) : maximum number of y
+        """
         # x = (self._position.get_x() + self._velocity.get_x()) % max_x
         # y = (self._position.get_y() + self._velocity.get_y()) % max_y
         self._position = Point(max_x, max_y)

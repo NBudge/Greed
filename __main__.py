@@ -43,7 +43,6 @@ def main():
 
     banner = Score()
     banner.set_actual_score(0)
-    banner.set_position(Point(10, 2))
     banner.set_text("Your Score is 0")
     banner.set_font_size(FONT_SIZE)
     banner.set_color(RED)
