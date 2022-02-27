@@ -71,7 +71,7 @@ class Board:
             result = self._actors[group][0]
         return result
     def move_all_elements_actors(self):
-        """moves rocks and gems and does the collision detection
+        """moves rocks and gems and does the collision detection and add of substract poinst from the score.
         
         Args:
             none
