@@ -1,6 +1,6 @@
 import os
 import random
-from sympy import true
+# from sympy import true
 from classes.object import Object
 from classes.score import Score
 from shared.color import Color
@@ -21,7 +21,7 @@ FONT_SIZE = 20
 
 COLS = MAX_Y
 ROWS = 30
-GAME = true
+# GAME = true
 WHITE = Color(255, 255, 255)
 BLUE = Color(45, 45, 255)
 RED = Color(245, 45, 45)
