@@ -22,12 +22,19 @@ class Video:
 
 
     def clear_buffer(self):
+        """Clears the video screen for new drawings to be rendered
+        """
         pyray.begin_drawing()
         pyray.clear_background(pyray.BLACK)
         if self._debug == True:
             self._draw_grid()
     
     def draw_actor(self, actor):
+        """Draws an actor on the board
+
+        Args:
+            actor: the actor to draw
+        """
         text = actor.get_text()
         x = actor.get_position().get_x()
         y = actor.get_position().get_y()
@@ -36,29 +43,48 @@ class Video:
         pyray.draw_text(text, x, y, font_size, color)
         
     def draw_actors(self, actors):
+        """Draws many actors to the board
+
+        Arg:
+            actors: the actors to draw
+        """
         for actor in actors:
             self.draw_actor(actor)
     
     def flush_buffer(self):
+        """Ends the drawing
+        """
         pyray.end_drawing()
 
     def get_cell_size(self):
+        """Defines the number of cell on the screen
+        """
         return self._cell_size
 
     def get_height(self):
+        """Defines the height of the screen
+        """
         return self._height
 
     def get_width(self):
+        """Defines the width of the screen
+        """
         return self._width
 
     def is_window_open(self):
+        """checks if the game window is open
+        """
         return not pyray.window_should_close()
 
     def open_window(self):
+        """Opens the game window
+        """
         pyray.init_window(self._width, self._height, self._caption)
         pyray.set_target_fps(self._frame_rate)
 
     def _draw_grid(self):
+        """Draws the game grid
+        """
         for y in range(0, self._height, self._cell_size):
             pyray.draw_line(0, y, self._width, y, pyray.GRAY)
         for x in range(0, self._width, self._cell_size):
